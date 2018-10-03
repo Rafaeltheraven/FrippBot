@@ -47,6 +47,9 @@ def start(bot, update):
 def help(bot, update):
 	update.message.reply_text("Do not worry, I am here now")
 
+def dev(bot, update):
+	update.message.reply_text("Greetings, my name is Robot Fripp. I am a robot that was developed by Rafael Dulfer to make sure DGM Live's intellectual property stays protected, even on telegram. If you have any suggestions, you can provide them on Github https://github.com/Rafaeltheraven/FrippBot")
+
 def error(bot, update, error):
 	logger.warning('Update "%s" caused error "%s"', update, error)
 
@@ -56,8 +59,7 @@ def physical_media(bot, update):
 	for intellectual_property in DGM_Live:
 		if intellectual_property.lower() in text.lower():
 			bot.send_sticker(chat_id=update.message.chat_id, sticker="CAADBAADIQADWqa-IJq3Af2Tz1s6Ag", reply_to_message_id=update.message.message_id)
-			bot.send_message(chat_id=update.message.chat_id, text=">" + intellectual_property)
-			bot.send_message(chat_id=update.message.chat_id, text="You did buy my album, right " + user.first_name + "?")
+			bot.send_message(chat_id=update.message.chat_id, text=">" + intellectual_property + "\n You did buy my album, right " + user.first_name + "?")
 
 
 def main():
@@ -66,6 +68,7 @@ def main():
 	dp.add_handler(MessageHandler(Filters.text, physical_media))
 	dp.add_handler(CommandHandler("start", start))
 	dp.add_handler(CommandHandler("help", help))
+	dp.add_handler(CommandHandler("dev", dev))
 	dp.add_error_handler(error)
 	updater.start_polling()
 	updater.idle()
