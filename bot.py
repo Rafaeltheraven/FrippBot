@@ -39,7 +39,7 @@ Songs = ["21st Century Schizoid Man", "I Talk to the Wind", "Epitaph", "Moonchil
 Members = ["Robert Fripp", "Mel Collins", "Tony Levin", "Pat Mastelotto", "Gavin Harrison", "Jakko Jakszyk", "Bill Rieflin", "Jeremy Stacey", "Michael Giles", "Ian McDonald", "Peter Sinfield", 
 "Greg Lake", "Gordon Haskell", "Andy McCulloch", "Ian Wallace", "Boz Burrell", "John Wetton", "Jamie Muir", "Bill Bruford", "David Cross", "Adrian Belew", "Trey Gunn", "Chris Gibson"]
 
-Misc = ["King Crimson", "(no pussyfooting)", "Frippertronics"]
+Misc = ["King Crimson", "(no pussyfooting)", "Frippertronics", "Fripp"]
 
 DGM_Live = Studio_Albums
 DGM_Live.extend(Live_Albums)
