@@ -7,6 +7,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+DGM_Live = []
+
 Studio_Albums = ["In the Court of the Crimson King", "In the Wake of Poseidon", "Lizard", "Islands", "Lark's Tongues in Aspic", "Starless and Bible Black", "Red", "Discipline",
 "Beat", "Three of a Perfect Pair", "THRAK", "the construKction of light", "The Power to Believe"]
 
@@ -23,15 +25,15 @@ Songs = ["21st Century Schizoid Man", "I Talk to the Wind", "Epitaph", "Moonchil
 "Behold! Blond Bedlam", "An Edible Bovine Dynamo", "Ahoy! Modal Mania", "Keep That One, Nick", "Yeah a Vile Limey Body", "Abominable Ballyhoo", "The Great Deceiver", "Lament", 
 "We'll Let You Know", "The Night Watch", "Trio", "The Mincer", "Fracture", "Fallen Angel", "One More Red Nightmare", "Providence", "Starless", "A Voyage to the Centre of the Cosmos", 
 "Improv I", "Improv II", "Bartley Butsford", "Daniel Dust", "Wilton Carpet", "The Golden Walnut", "Clueless and Slightly Slack", "Asbury Park", "It is for You, but Not for Us", "Cerberus", 
-"Elephant Talk", "Frame by Frame", "Matte Kudasai", "待ってください", "Please Wait for Me", "Indiscipline", "Thela Hun Ginjeet", "The Sheltering Sky", "Neal and Jack and Me", "Heartbeat", 
+"Elephant Talk", "Frame by Frame", "Matte Kudasai", "Please Wait for Me", "Indiscipline", "Thela Hun Ginjeet", "The Sheltering Sky", "Neal and Jack and Me", "Heartbeat", 
 "Sartori in Tangier", "Waiting Man", "Neurotica", "Two Hands", "The Howler", "Requiem", "Three of a Perfect Pair", "Model Man", "Sleepless", "Man with an Open Heart", "Nuages", 
 "Industry", "Dig Me", "No Warning", "Larks' Tongues in Aspic (Part III)", "Industrial Zone A", "Industrial Zone B", "The King Crimson Barber Shop", "Shidare Zakura", "Industrial Zone C", 
 "Coda: Marine 475", "Dinosaur", "Walking on Air", "Inner Garden I", "People", "Radio I", "One Time", "Radio II", "Inner Garden II", "Sex Sleep Eat Drink Dream" "When I Say Stop, Continue", 
 "Cage", "Funky Jam", "Krim 3", "Bass Groove", "Calliope", "No Questions Asked", "Monster Jam", "Fans, Sloth, Nuns, Felons", "Declamatory Doth Madden", "Witnessing Dumb Whodunnits", 
-"Cloudscape", "Jimmy Bond", "Sad Woman Jam", "Tony's Jam", "Silent Night à la Frippertronics", "Entry of the Crims", "Two Sticks", "Prism", "Conundrum", "Fearless and Highly THRaKked", 
+"Cloudscape", "Jimmy Bond", "Sad Woman Jam", "Tony's Jam", "Silent Night a la Frippertronics", "Entry of the Crims", "Two Sticks", "Prism", "Conundrum", "Fearless and Highly THRaKked", 
 "Free as a Bird", "Biker Babes of the Rio Grande", "Mother Hold the Candle Steady While I Shave the Chicken's Lip", "The Slaughter of the Innocents", "This Night Wounds Time", "The Race",
 "Dressing Room", "Tokyo", "From the Hotel", "Mr. Bill at the Station", "ProzaKc Blues", "Into the Frying Pan", "FraKctured", "The World's My Oyster Soup Kitchen Floor Wax Museum", 
-"Larks' Tongues in Aspic – Part IV", "Coda: I Have a Dream", "Heaven and Earth", "Mastelotticus SS Blasticus", "The Power to Believe I: A Cappella", "Facts of Life", "The Power to Believe II: Power Circle", 
+"Larks' Tongues in Aspic Part IV", "Coda: I Have a Dream", "Heaven and Earth", "Mastelotticus SS Blasticus", "The Power to Believe I: A Cappella", "Facts of Life", "The Power to Believe II: Power Circle", 
 "Dangerous Curves", "The Power to Believe III: Deception of the Thrush", "The Power to Believe IV: Coda"]
 
 Members = ["Robert Fripp", "Mel Collins", "Tony Levin", "Pat Mastelotto", "Gavin Harrison", "Jakko Jakszyk", "Bill Rieflin", "Jeremy Stacey", "Michael Giles", "Ian McDonald", "Peter Sinfield", 
@@ -39,7 +41,12 @@ Members = ["Robert Fripp", "Mel Collins", "Tony Levin", "Pat Mastelotto", "Gavin
 
 Misc = ["King Crimson", "(no pussyfooting)", "Frippertronics"]
 
-DGM_Live = Studio_Albums.append(Songs.append(Members.append(Misc.append(Live_Albums.append(EPs)))))
+DGM_Live = Studio_Albums
+DGM_Live.extend(Live_Albums)
+DGM_Live.extend(Songs)
+DGM_Live.extend(EPs)
+DGM_Live.extend(Members)
+DGM_Live.extend(Misc)
 
 def start(bot, update):
 	update.message.reply_text("I am now monitoring this chat")
